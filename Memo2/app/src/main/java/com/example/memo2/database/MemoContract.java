@@ -1,4 +1,4 @@
-package com.example.memo.db;
+package com.example.memo.database;
 
 
 import android.provider.BaseColumns;
