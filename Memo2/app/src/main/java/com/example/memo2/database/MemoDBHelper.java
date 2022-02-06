@@ -18,7 +18,7 @@ public class MemoDBHelper extends SQLiteOpenHelper {
         public void onCreate(SQLiteDatabase db) {
             String createTable = "CREATE TABLE " + MemoContract.Memos.TABLE + " ( " +
                     MemoContract.Memos._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    MemoContract.Memos.COL_content + " TEXT NOT NULL);";
+                    MemoContract.Memos.COL_CONTENT + " TEXT NOT NULL);";
 
             db.execSQL(createTable);
         }
