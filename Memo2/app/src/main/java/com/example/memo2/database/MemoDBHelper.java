@@ -16,7 +16,7 @@ public class MemoDBHelper extends SQLiteOpenHelper {
     }
         @Override
         public void onCreate(SQLiteDatabase db) {
-            String createTable = "CREATE TABLE " + MemoContract.Memos.TABLE + " ( " +
+            String createTable = "CREATE TABLE " + MemoContract.notes.TABLE + " ( " +
                     MemoContract.Memos._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     MemoContract.Memos.COL_CONTENT + " TEXT NOT NULL);";
 
@@ -25,7 +25,7 @@ public class MemoDBHelper extends SQLiteOpenHelper {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS " + MemoContract.Memos.TABLE);
+            db.execSQL("DROP TABLE IF EXISTS " + MemoContract.notes.TABLE);
             onCreate(db);
         }
     }
