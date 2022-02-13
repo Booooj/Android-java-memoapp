@@ -13,10 +13,20 @@ public class Post extends AppCompatActivity {
         btn_Back.setOnClickListener(v -> {
             Intent intent = new Intent(getApplication(), MainActivity.class);
             startActivity(intent);
-          
-           SQLiteDatabase db = mHelper.getWritableDatabase();
+           });
+       final EditText memo = new EditText(this);
+                    btn_save = (Button) findViewById(R.id.btn_save);
+            btn_save.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String content = memo.getText().toString();
+                    SQLiteDatabase db = mHelper.getWritableDatabase();
                             ContentValues values = new ContentValues();
                             values.put(MemoContract.Memo.COL_CONTENT, content);
-          
-             db.close();
-}
+                    db.insert(MemoContract.Memo.TABLE,
+                            null,
+                            values,);
+                    db.close();
+                        }
+                    });
+                }}
