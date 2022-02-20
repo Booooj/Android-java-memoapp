@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Memo {
     @PrimaryKey
-    public int uid;
+    public int mid;
 
     @ColumnInfo(content = "content")
     public String content;
