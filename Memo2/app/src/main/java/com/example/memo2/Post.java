@@ -20,13 +20,5 @@ public class Post extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String content = memo.getText().toString();
-                    SQLiteDatabase db = mHelper.getWritableDatabase();
-                            ContentValues values = new ContentValues();
-                            values.put(MemoContract.Memo.COL_CONTENT, content);
-                    db.insert(MemoContract.Memo.TABLE,
-                            null,
-                            values,);
-                    db.close();
-                        }
-                    });
+                   
                 }}
