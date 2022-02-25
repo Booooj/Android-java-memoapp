@@ -21,20 +21,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 }
-      private void show() {
-     
-      SQLiteDatabase db = dbHelper.getWritableDatabase();
-      Cursor cursor = db.query(MemoContract.Memo.TABLE,
-                new String[]{MemoContract.Memo._ID, MemoContract.Memo.COL_CONTENT},
-                null, null, null, null, null);
-      }
-      cursor.close();
-       db.close();
-    }
-
-  public void delete(View view) {
-         
-        db.close();
-        show();
-    }
+    
 }
