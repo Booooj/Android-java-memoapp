@@ -2,24 +2,38 @@ package com.example.memo2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import android.database.sqlite.SQLiteDatabase;
+
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-      private MemoDBHelper mHelper;
-    private ListView memoListView;
-    private ArrayAdapter<String> mAdapter;
 
+    Button Savebutton;
+   
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate() {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    
-       Button goButton = findViewById(R.id.go_button);
 
-        goButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplication(), Post.class);
-            startActivity(intent);
-        });
-}
-    
+        Savebutton = findViewById(R.id.savebutton);
+    }
+
+    public void onSaveButtonClick(View view) {
+        EditText etContent = findViewById(R.id.etContent);
+        String content = etContent.getText().toString();
+
+        DBHelper helper = new DBHelper(MainActivity.this);
+        SQLiteDatabase db = helper.getWritableDatabase();
+        //
+            String sqlInsert = "INSERT INTO notememo (note) VALUES (?)";
+        
+           
+        } finally {
+            db.close();
+        }
+
+        etContent.setText("");
+    }
+
 }
