@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         DBHelper helper = new DBHelper(MainActivity.this);
         SQLiteDatabase db = helper.getWritableDatabase();
         //
-            String sqlInsert = "INSERT INTO notememo (note) VALUES (?)";
+            String sqlInsert = "INSERT INTO memo (note) VALUES (?)";
         
            
         } finally {
